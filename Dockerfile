@@ -6,5 +6,5 @@ COPY . /srv
 
 RUN npm install
 
-CMD ["node", "poc.js"]
+CMD ["node", "bot.ts"]
 
