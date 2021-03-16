@@ -1,0 +1,24 @@
+{
+  "name": "discord_bot",
+  "version": "1.0.0",
+  "description": "![](https://i.ibb.co/3FtJNcG/tob.png)",
+  "main": "poc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node poc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjanik/Discord_bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjanik/Discord_bot/issues"
+  },
+  "homepage": "https://github.com/bjanik/Discord_bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
