@@ -5,7 +5,8 @@
   "main": "poc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node poc.js"
+    "start": "node poc.js",
+    "bot": "tsc && node dist/src/Bot.js"
   },
   "repository": {
     "type": "git",
