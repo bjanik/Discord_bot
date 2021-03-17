@@ -12,22 +12,22 @@ client.login(token)
 
 client.once("ready", () => {
     console.log("Ready!");
-  });
-  
+});
+
+// COMMANDS ############
 
 client.on('message', msg => {
-// command 1 
-    if (msg.content === '!ping') {
-        ping(msg)        
+    // command 1 
+        if (msg.content === '!ping') {
+            ping(msg)        
+        }
+    // command 2 
+    if (msg.content === '!lire') {
+        lire(msg)        
     }
-// command 2 
-if (msg.content === '!lire') {
-    lire(msg)        
-}
-// command 3  etc.
+});
 
-  });
-
+// END OF COMMANDS ####################
 
   client.once("reconnecting", () => {
     console.log("Reconnecting!");
