@@ -15,4 +15,4 @@ jobs:
       - name: See if the container is executing
         run: docker ps
       - name: Test our functions
-        run: docker exec -it ci_container npm test
+        run: docker exec ci_container npm test
