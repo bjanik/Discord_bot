@@ -16,7 +16,8 @@ client.once("ready", () => {
 });
 
 let functionsMap = new Map([['ping', ping],
-                            ['lire', lire]])
+                            ['lire', lire],
+                            ['help', help]])
 
 // COMMANDS ############
 
@@ -29,10 +30,6 @@ client.on('message', msg => {
     else {
       msg.reply(`Sorry, '${command}' command is invalid!`)
     }
-    // command 2 
-    if (msg.content === '!help') {
-        help(msg)        
-      }
 });
 
 // END OF COMMANDS ####################
