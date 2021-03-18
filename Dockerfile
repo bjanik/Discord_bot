@@ -2,12 +2,10 @@ FROM node:latest
 
 WORKDIR /app
 
-#VOLUME /app
-
 COPY . .
 
 RUN npm install -g typescript
 
-RUN npm install -g
+RUN npm install
 
 CMD ["npm", "run", "bot"]
