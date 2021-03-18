@@ -14,16 +14,19 @@ client.once("ready", () => {
     console.log("Ready!");
 });
 
+let functionsMap = new Map([['ping', ping],
+                            ['lire', lire]])
+
 // COMMANDS ############
 
 client.on('message', msg => {
-    // command 1 
-        if (msg.content === '!ping') {
-            ping(msg)        
-        }
-    // command 2 
-    if (msg.content === '!lire') {
-        lire(msg)        
+    if (msg.author.bot || !msg.content.startsWith(prefix)) return
+    const command = msg.content.slice(1)
+    if (functionsMap.has(command)) {
+      functionsMap.get(command)(msg)
+    }
+    else {
+      msg.reply(`Sorry, '${command}' command is invalid!`)
     }
 });
 
