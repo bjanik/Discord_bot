@@ -16,3 +16,20 @@ jobs:
         run: docker ps
       - name: Test our functions
         run: docker exec ci_container npm test
+  deploy:
+    runs-on: ubuntu-latest
+      - name: Run Ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2.2.0
+          with:
+          playbook: deploy.yml
+            directory: ./
+            key: ${{secrets.azure}}
+            inventory: |
+              [tob_azure]
+              51.103.117.57
+
+            vault_password: ${{secrets.VAULT_PASSWORD}}
+            options: |
+              --limit group1
+              --extra-vars hello=there
+              --verbose

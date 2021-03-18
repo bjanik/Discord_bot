@@ -3,8 +3,10 @@ node_modules/
 node_modules
 build
 npm-debug.log
-.env
 .DS_Store
-dist/*
+dist/
 config.ts
+coverage
+.nyc_output
 package-lock.json
+inv

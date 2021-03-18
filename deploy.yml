@@ -1,0 +1,7 @@
+# Install system apt packages
+- hosts: tob_azure
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Install Git
+      apt: name=git state=latest
