@@ -3,6 +3,7 @@ import Discord from "discord.js";
 import {token} from "../config";
 import ping from "./commands/PingCommand"
 import lire from "./commands/LireCommand"
+import help from "./commands/HelpCommand"
 
 const client = new Discord.Client();
 
@@ -25,6 +26,10 @@ client.on('message', msg => {
     if (msg.content === '!lire') {
         lire(msg)        
     }
+    // command 2 
+    if (msg.content === '!help') {
+        help(msg)        
+      }
 });
 
 // END OF COMMANDS ####################
