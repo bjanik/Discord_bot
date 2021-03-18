@@ -2,8 +2,7 @@ name: CI/CD Discord Bot (TOB)
 on:
   push:
     branches:
-      - container
-      - master
+    - "**"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,6 +11,8 @@ jobs:
       - name: Build the Docker image
         run: docker build -t tob .
       - name: Run the docker repo
-        run: docker run -itd tob
+        run: docker run --name ci_container -itd tob
       - name: See if the container is executing
         run: docker ps
+      - name: Test our functions
+        run: docker exec ci_container npm test
