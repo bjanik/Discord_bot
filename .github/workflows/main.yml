@@ -15,3 +15,5 @@ jobs:
         run: docker run -itd tob
       - name: See if the container is executing
         run: docker ps
+      - name: Test our functions
+        run: npm test
