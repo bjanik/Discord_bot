@@ -16,7 +16,8 @@ client.once("ready", () => {
 });
 
 let functionsMap = new Map([['ping', ping],
-                            ['lire', lire]])
+                            ['lire', lire],
+                            ['roulette', roulette]])
 
 // COMMANDS ############
 

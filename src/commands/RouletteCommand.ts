@@ -1,5 +1,5 @@
 
-class Gun {
+export class Gun {
     barrel: Array<number>;
     chamber: number
     triggers: number
