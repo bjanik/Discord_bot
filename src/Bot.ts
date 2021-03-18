@@ -4,6 +4,7 @@ import {token} from "../config";
 import ping from "./commands/PingCommand"
 import lire from "./commands/LireCommand"
 import help from "./commands/HelpCommand"
+import ball from "./commands/8ballCommand"
 
 const client = new Discord.Client();
 
@@ -17,13 +18,15 @@ client.once("ready", () => {
 
 let functionsMap = new Map([['ping', ping],
                             ['lire', lire],
-                            ['help', help]])
+                            ['help', help],
+                            ['8ball', ball]])
 
 // COMMANDS ############
 
 client.on('message', msg => {
     if (msg.author.bot || !msg.content.startsWith(prefix)) return
-    const command = msg.content.slice(1)
+    const msg_split = msg.content.split(' ');
+    const command = msg_split[0].slice(1)
     if (functionsMap.has(command)) {
       functionsMap.get(command)(msg)
     }
