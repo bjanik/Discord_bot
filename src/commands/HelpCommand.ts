@@ -21,6 +21,8 @@ lance la musique dans votre channel vocal ⏯️
 
 !8ball 'message' //Boule Magique 🎱 
 
+!kaamelott  //Envoi un dialogue aléatoire de kaamelott 🍻 ⚔️ 👑 
+
 \`\`\` 
 `
 
