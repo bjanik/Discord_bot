@@ -3,6 +3,7 @@ import Discord from "discord.js";
 import {token} from "../config";
 import ping from "./commands/PingCommand"
 import lire from "./commands/LireCommand"
+import roulette from "./commands/RouletteCommand"
 
 const client = new Discord.Client();
 
@@ -15,7 +16,8 @@ client.once("ready", () => {
 });
 
 let functionsMap = new Map([['ping', ping],
-                            ['lire', lire]])
+                            ['lire', lire],
+                            ['roulette', roulette]])
 
 // COMMANDS ############
 
@@ -27,7 +29,7 @@ client.on('message', msg => {
     }
     else {
       msg.reply(`Sorry, '${command}' command is invalid!`)
-    }
+	}
 });
 
 // END OF COMMANDS ####################
