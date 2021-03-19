@@ -3,7 +3,9 @@ import Discord from "discord.js";
 import {token} from "../config";
 import ping from "./commands/PingCommand"
 import lire from "./commands/LireCommand"
+import help from "./commands/HelpCommand"
 import roulette from "./commands/RouletteCommand"
+import kaamelott from "./commands/kaamelottCommand";
 
 const client = new Discord.Client();
 
@@ -17,7 +19,9 @@ client.once("ready", () => {
 
 let functionsMap = new Map([['ping', ping],
                             ['lire', lire],
-                            ['roulette', roulette]])
+                            ['help', help],
+                            ['roulette', roulette],
+                            ['kaamelott', kaamelott]])
 
 // COMMANDS ############
 

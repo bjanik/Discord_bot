@@ -9,8 +9,17 @@
     - name: clean the bot
       shell: rm -rf /home/tob/discord_bot
 
-    - name: Install the bot
-      shell: chdir=/home/tob/ git clone -f https://github.com/bjanik/Discord_bot.git
+# CLONE THE REPO
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: clone repo
+      git:
+        repo: "https://github.com/{{ github_user }}/{{ app_name }}.git"
+        dest: /home/{{ ansible_ssh_user }}/{{ app_name }}
+        update: yes # Does a git pull if the repo already exists
+        force: yes
+
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg

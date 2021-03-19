@@ -1,27 +1,55 @@
-# Discord Bot: Tob! 
+# Discord Bot ("Tob 🤖") v0.5
 
-![](https://i.ibb.co/3FtJNcG/tob.png)
+**Tob** is a bot from discord created to enhance your discord experience and to test a new programming architecture in typescript, node into a virtual environment ran by docker. 🐳
 
-__Created by Bart, Max et Jojo, Tob is gonna help you to know when is the next Train or Bus that you have to take to Go Home
-from one place to another (only valid in Paris and peripheria )__
+### Requirements 📋
 
-**Le commande help**
-```
-Bienvenue a Tob !
+- Docker 🐋
 
-    Tob permet d'écouter votre musique provenant de youtube mais aussi de donner de la lecture provenant de thehackernews.com ou bien de jouer a la roulette russe !
+### Used tech 👨‍💻
 
-    !play 'youtube link' //Ajoute votre vidéo a la file d'attente et 
-    lance la musique dans votre channel vocal
-    !play //Relance la musique
-    !stop  //Stop la musique
-    !skip //Passe a la musique suivante
-            
-    !read //Affiche un article aléatoire de thehackernews.com
-            
-    !roulette //Jeux de la roulette russe
-```
+- **Docker 🐋**
+- **Node JS v14**
+- **TypeScript**
 
-**Run it**
+### Used Libraries 📒
 
+- _Discord.js_
+- _Axios (For requesting)_
+- _Cheerios (For Scrapping)_
+- _TypeScript_
+- _@types/node_
+- _mocha_ (For testing)
+- _Chai_ (Test unitaires)
+- _ffmpeg_ (audio files)
+- _ytdl-core_
+
+### List of commands 📖
+
+| Version of Tob | Command available       | Action                                                                   |
+| -------------- | ----------------------- | ------------------------------------------------------------------------ |
+| 0.1            | !ping                   | Returns pong!                                                            |
+| 0.2            | !lire , read            | Return a random article to read from hackernews                          |
+| 0.2            | !help                   | Return the list of commands                                              |
+| 0.3            | !roulette               | Starts a russian roulette game of six turns max                          |
+| 0.4            | !kaamelott              | Returns a message with a legendary quote from the french series kaamelot |
+| x.x            | !!play + 'youtube link' | Play a song from a youtube link in a voice channel                       |
+| x.x            | !stop                   | Stops playing the music tha tit started to play                          |
+| x.x            | !8ball + 'question'     | The magic ball that return yes and no to a question                      |
+
+### How to build this ? ⚒️
+
+In the root directory build the docker image and run it
+
+`docker build . -t tob && docker run -itd tob`
+
+The commands in docker to run the bot  
 `npm run bot`
+
+The commands to test the bot
+
+` npm run test`
+
+### Credits 👥
+
+Thanks to Bart, Jordan et max to making this project smooth and functional as possible and David and Amin for being a great support into bringing this to live.
