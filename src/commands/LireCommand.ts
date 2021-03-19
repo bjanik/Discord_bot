@@ -10,6 +10,15 @@ interface Articles {
     link: string;
 }
 
+export function getArticles (data:object, n: number) {
+  const myData: Articles = {
+     title : data[n].title,
+     link : data[n].link
+  }
+  return myData
+}
+
+
 // Send an async HTTP Get request to the url
 export default function lire(msg) {
 AxiosInstance.get(url)
@@ -31,13 +40,12 @@ AxiosInstance.get(url)
     })  
     // Return the articles
     const r: number = Math.floor(Math.random() * 20)
-    
-    msg.reply(articles[r].title);
-    msg.reply(articles[r].link);
+    const finalArticle = (getArticles(articles,r))
+    msg.reply(finalArticle.title)
+    msg.reply(finalArticle.link)
   // End of return articles
   }
-)
-.catch(console.error); // Error handling
+).catch(console.error); // Error handling
 
 
 }
