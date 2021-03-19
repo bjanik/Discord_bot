@@ -4,7 +4,9 @@
   "description": "![](https://i.ibb.co/3FtJNcG/tob.png)",
   "main": "poc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "jojotest": "mocha -r ts-node/register tests/*.test.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
     "start": "node poc.js",
     "bot": "tsc && node dist/src/Bot.js"
   },
@@ -32,6 +34,8 @@
     "ytdl-core": "^4.5.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",

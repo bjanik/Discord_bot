@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "types": [ "@types/mocha", "@types/node" ],
+        "moduleResolution": "node",
         "target": "es2018",
         "outDir": "dist",
         "lib": [
