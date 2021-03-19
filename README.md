@@ -26,7 +26,7 @@
 
 ### List of commands 📖
 
-| Version of Tob | Command avaliable       | Action                                                                   |
+| Version of Tob | Command available       | Action                                                                   |
 | -------------- | ----------------------- | ------------------------------------------------------------------------ |
 | 0.1            | !ping                   | Returns pong!                                                            |
 | 0.2            | !lire , read            | Return a random article to read from hackernews                          |
