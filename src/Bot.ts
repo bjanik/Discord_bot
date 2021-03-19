@@ -7,6 +7,7 @@ import help from "./commands/HelpCommand"
 import ball from "./commands/8ballCommand"
 import roulette from "./commands/RouletteCommand"
 import kaamelott from "./commands/kaamelottCommand";
+import ball from "./commands/8ballCommand"
 
 const client = new Discord.Client();
 
@@ -24,7 +25,8 @@ let functionsMap = new Map([['ping', ping],
                             ['help', help],
                             ['8ball', ball],
                             ['roulette', roulette],
-                            ['kaamelott', kaamelott]])
+                            ['kaamelott', kaamelott],
+                            ['8ball', ball]])
 
 // COMMANDS ############
 
