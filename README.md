@@ -2,7 +2,7 @@
 
 **Tob** is a bot from discord created to enhance your discord experience and to test a new programming architecture in typescript, node into a virtual environment ran by docker. 🐳
 
-### Requeriments 📋
+### Requirements 📋
 
 - Docker 🐋
 
@@ -35,7 +35,7 @@
 | 0.4            | !kaamelott              | Returns a message with a legendary quote from the french series kaamelot |
 | x.x            | !!play + 'youtube link' | Play a song from a youtube link in a voice channel                       |
 | x.x            | !stop                   | Stops playing the music tha tit started to play                          |
-| x.x            | !8ball                  | The magic ball that return yes and no to a question                      |
+| x.x            | !8ball + 'question'     | The magic ball that return yes and no to a question                      |
 
 ### How to build this ? ⚒️
 
