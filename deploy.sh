@@ -1,1 +1,1 @@
-sudo ansible-playbook deploy.yml -i inv --key-file ~/.ssh/tobkey
+sudo ansible-playbook deploy.yml -i inv --key-file ~/.ssh/tobkey -vvv

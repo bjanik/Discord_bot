@@ -5,3 +5,19 @@
   tasks:
     - name: Install Git
       apt: name=git state=latest
+
+    - name: clean the bot
+      shell: rm -rf /home/tob/discord_bot
+
+    - name: Install the bot
+      shell: chdir=/home/tob/ git clone -f https://github.com/bjanik/Discord_bot.git
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Update apt and install docker.io
+      apt: update_cache=yes name=docker.io state=latest
+
+    - name: Go to the folder and execute docker-compose
+      shell: docker-ps
