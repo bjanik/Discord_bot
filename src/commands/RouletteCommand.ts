@@ -21,7 +21,7 @@ export class Gun {
     trigger() {
         if (this.barrel[this.chamber] == 1) {
             this.load_barrel()
-            return "BANG! You're dead! Let's reload the gun";
+            return ":boom: You're dead! Let's reload the gun";
         }
         this.chamber++;
         this.triggers++
