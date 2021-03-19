@@ -18,7 +18,7 @@ client.once("ready", () => {
     console.log("Ready!");
 });
 
-let functionsMap = new Map([['ping', ping],
+let functionsMap = new Map<string, Function>([['ping', ping],
                             ['lire', lire],
                             ['read', lire],
                             ['help', help],

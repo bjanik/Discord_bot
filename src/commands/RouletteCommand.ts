@@ -1,3 +1,4 @@
+import { Message } from "discord.js";
 
 export class Gun {
     barrel: Array<number>;
@@ -7,10 +8,11 @@ export class Gun {
     constructor() {
         this.barrel = new Array(0, 0, 0, 0, 0, 0)
         this.chamber = 0
+        this.triggers = 0
         this.load_barrel()
     }
 
-    load_barrel() {
+    load_barrel(): void {
         let chamber = Math.floor(Math.random() * 6)
         this.barrel[this.chamber] = 0
         this.triggers = 0
@@ -18,7 +20,7 @@ export class Gun {
         this.barrel[chamber] = 1
     }
 
-    trigger() {
+    trigger(): string {
         if (this.barrel[this.chamber] == 1) {
             this.load_barrel()
             return ":boom: You're dead! Let's reload the gun";
@@ -33,7 +35,6 @@ export class Gun {
 
 const gun = new Gun()
 
-export default function roulette(msg) {
-    console.log(gun.barrel)
+export default function roulette(msg: Message) {
     msg.reply(gun.trigger())
 }

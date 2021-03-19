@@ -4,6 +4,7 @@
         "types": [ "@types/mocha", "@types/node" ],
         "moduleResolution": "node",
         "target": "es2018",
+        "strict": true,
         "outDir": "dist",
         "lib": [
             "ESNext",
