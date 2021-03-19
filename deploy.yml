@@ -6,11 +6,8 @@
     - name: Install Git
       apt: name=git state=latest
 
-    - name: clean the bot
-      shell: rm -rf /home/tob/discord_bot
-
 # CLONE THE REPO
-- hosts: webservers
+- hosts: tob_azure
   become: yes
   tasks:
     - name: clone repo
@@ -20,6 +17,20 @@
         update: yes # Does a git pull if the repo already exists
         force: yes
 
+# Copy the config file
+- hosts: tob_azure
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: ./config.ts
+        dest: /home/{{ ansible_ssh_user }}/{{ app_name }}/
+        owner: tob
+        group: tob
+        mode: "0644"
+
+    #INSTALL DOCKER
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -28,5 +39,24 @@
     - name: Update apt and install docker.io
       apt: update_cache=yes name=docker.io state=latest
 
-    - name: Go to the folder and execute docker-compose
-      shell: docker-ps
+# Build
+- hosts: tob_azure
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Build the docker image
+      shell: chdir=/home/{{ ansible_ssh_user }}/{{ app_name }} docker build . -t tob
+
+# RUN
+- hosts: tob_azure
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Kill the container jojo
+      shell: docker kill jojo
+
+    - name: Remove the container jojo
+      shell: docker rm jojo
+
+    - name: Rebuild the container
+      shell: docker run --name jojo -itd tob
