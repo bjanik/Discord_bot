@@ -1,13 +1,12 @@
 //import { hello_reply } from './hello_reply';
 import Discord from "discord.js";
 import {token} from "../config";
-import ping from "./commands/PingCommand"
-import lire from "./commands/LireCommand"
-import help from "./commands/HelpCommand"
-import ball from "./commands/8ballCommand"
-import roulette from "./commands/RouletteCommand"
+import ping from "./commands/PingCommand";
+import lire from "./commands/LireCommand";
+import help from "./commands/HelpCommand";
+import ball from "./commands/8ballCommand";
+import roulette from "./commands/RouletteCommand";
 import kaamelott from "./commands/kaamelottCommand";
-import ball from "./commands/8ballCommand"
 
 const client = new Discord.Client();
 
