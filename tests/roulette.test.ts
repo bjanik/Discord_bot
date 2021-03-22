@@ -8,11 +8,22 @@ describe('roulette testing', () => {
 
         // Only one bullet must be in the charger, thus sum(gun.barrel) should be 1
         expect(gun.barrel.reduce((sum, val) => sum + val)).to.equal(1)
+    }),
 
-        if (gun.barrel[gun.chamber] == 1) {
-            let fate = gun.trigger()
+    it('checks result when trigger', () => {
+        const gun = new Gun()
+
+        let fate = gun.trigger()
+        if (gun.triggers == 0) {
             expect(fate).to.equal(":boom: You're dead! Let's reload the gun")
         }
+        else {
+            expect(fate).to.equal("CLIC! You're lucky! 1/6")
+        }
+    }),
+
+    it('checks it fires at least once', () => {
+        const gun = new Gun()
 
         // Barrel has 6 chambers, so it is impossible to trigger 6 times without actually firing at least once
         let outcomes = []

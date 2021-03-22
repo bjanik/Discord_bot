@@ -27,7 +27,7 @@ export class Gun {
         this.triggers++
         if (this.chamber > 5)
             this.chamber = 0
-        return `CLIC! You're lucky! ${this.triggers}/6`
+        return `CLIC! You're lucky! ${this.triggers}/6`
     }
 }
 
