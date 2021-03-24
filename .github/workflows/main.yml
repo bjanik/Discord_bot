@@ -2,7 +2,7 @@ name: CI/CD Discord Bot (TOB)
 on:
   push:
     branches:
-    - "**"
+      - "**"
 jobs:
   build:
     runs-on: ubuntu-latest

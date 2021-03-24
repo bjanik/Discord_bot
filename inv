@@ -1,0 +1,14 @@
+[tob_azure]
+# Add hosts here
+51.103.117.57
+
+
+[tob_azure:vars]
+# Local variables for Ansible playbooks
+
+ansible_ssh_user=tob
+github_user=bjanik
+ansible_ssh_pipelining= true
+
+#aligned with github repo name
+app_name=Discord_bot
